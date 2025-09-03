@@ -30,10 +30,7 @@ export default function AddSchool({ showNotification }) {
       formData.append("contact", data.contact);
       formData.append("email_id", data.email_id);
 
-      await axios.post(
-        "https://reno-school-platform-production.up.railway.app",
-        formData
-      );
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/schools`, formData);
 
       reset();
       showNotification("School added successfully!", "success");

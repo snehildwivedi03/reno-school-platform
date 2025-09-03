@@ -14,7 +14,7 @@ export default function ShowSchools({ showNotification }) {
     const fetchSchools = async () => {
       try {
         const res = await axios.get(
-          "https://reno-school-platform-production.up.railway.app"
+          `${import.meta.env.VITE_API_URL}/api/schools`
         );
         setSchools(res.data);
       } catch (err) {
@@ -32,7 +32,7 @@ export default function ShowSchools({ showNotification }) {
     // We've replaced window.confirm with a less intrusive check for simplicity
     // In a real app, a custom modal component would be best here.
     try {
-      await axios.delete(`http://localhost:5000/api/schools/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/schools/${id}`);
       setSchools((prev) => prev.filter((school) => school.id !== id));
       // 2. Call the notification on successful deletion
       showNotification("School deleted successfully.", "success");
@@ -78,10 +78,11 @@ export default function ShowSchools({ showNotification }) {
               transition={{ duration: 0.3 }}
             >
               <img
-                src={`http://localhost:5000/uploads/school-Img/${school.image}`}
-                alt={school.name}
-                className="w-32 h-32 object-cover rounded-md mb-3"
+                src={`${import.meta.env.VITE_API_URL}/uploads/school-Img/${
+                  school.image
+                }`}
               />
+
               <h3 className="text-lg font-semibold text-gray-800 truncate w-full">
                 {school.name}
               </h3>
