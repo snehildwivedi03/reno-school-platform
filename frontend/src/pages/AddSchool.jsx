@@ -30,7 +30,10 @@ export default function AddSchool({ showNotification }) {
       formData.append("contact", data.contact);
       formData.append("email_id", data.email_id);
 
-      await axios.post("http://localhost:5000/api/schools", formData);
+      await axios.post(
+        "https://reno-school-platform-production.up.railway.app",
+        formData
+      );
 
       reset();
       showNotification("School added successfully!", "success");

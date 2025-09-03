@@ -13,7 +13,9 @@ export default function ShowSchools({ showNotification }) {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/schools");
+        const res = await axios.get(
+          "https://reno-school-platform-production.up.railway.app"
+        );
         setSchools(res.data);
       } catch (err) {
         console.error("Error fetching schools", err);
