@@ -9,7 +9,7 @@ export default function Notification({ notification, onDone }) {
     if (show) {
       const timer = setTimeout(() => {
         onDone();
-      }, 3000); // Notification disappears after 3 seconds
+      }, 3000);
 
       return () => clearTimeout(timer);
     }

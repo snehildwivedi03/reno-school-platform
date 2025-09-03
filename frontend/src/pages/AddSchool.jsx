@@ -42,7 +42,6 @@ export default function AddSchool({ showNotification }) {
       if (error.response?.status === 409 && error.response?.data?.error) {
         showNotification(error.response.data.error, "error");
       } else {
-        // For all other errors, show a generic message
         showNotification("Failed to add school. Please try again.", "error");
       }
     } finally {

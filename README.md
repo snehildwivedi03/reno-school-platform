@@ -46,7 +46,7 @@ This project showcases full-stack development skills including database design, 
 
 - React
 - Axios
-- Tailwind CSS (optional)
+- Tailwind CSS
 
 ### Backend
 

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/db"); // pool.promise()
+const db = require("../models/db");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");

@@ -5,7 +5,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Helper function for NavLink classes to avoid repetition
   const getNavLinkClass = ({ isActive }) =>
     isActive
       ? "text-blue-600 font-bold border-b-2 border-blue-600"
@@ -15,14 +14,12 @@ export default function Navbar() {
     <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Branding/Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="text-2xl font-bold text-gray-800">
               School Directory
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             <NavLink to="/schools" className={getNavLinkClass}>
               View Schools
@@ -31,8 +28,6 @@ export default function Navbar() {
               Add School
             </NavLink>
           </div>
-
-          {/* Mobile Menu Button (Hamburger) */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -48,7 +43,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu (Dropdown) */}
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
