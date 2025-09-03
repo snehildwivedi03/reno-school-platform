@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   const [notification, setNotification] = useState({
     message: "",
-    type: "success", // 'success' or 'error'
+    type: "success",
     show: false,
   });
 
@@ -30,7 +30,6 @@ function App() {
         <main className="pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Pass showNotification function as a prop */}
             <Route
               path="/add"
               element={<AddSchool showNotification={showNotification} />}
