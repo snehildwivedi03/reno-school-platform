@@ -1,4 +1,3 @@
-// src/components/Loader.jsx
 export default function Loader() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
